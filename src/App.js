@@ -1,7 +1,5 @@
 function App() {
-  return (
-      <p> News portal </p>
-  );
+  return <p> News portal</p>;
 }
 
 export default App;
