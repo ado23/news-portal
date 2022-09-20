@@ -4,7 +4,7 @@ import LandingPage from "pages/LandingPage";
 
 const App = () => {
   return (
-    <div>
+    <div style={{ background: "whitesmoke" }}>
       <LandingPage />
     </div>
   );
