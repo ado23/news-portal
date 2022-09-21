@@ -4,7 +4,7 @@ import { Navbar } from "react-bootstrap";
 import assets from "assets/images";
 
 const Logo = () => (
-  <Navbar.Brand href="#home" style={{ width: "21%" }}>
+  <Navbar.Brand href="/" style={{ width: "21%" }}>
     <img
       alt=""
       src={assets.logo}

@@ -2,6 +2,8 @@ import React from "react";
 import { Nav } from "react-bootstrap";
 import styled from "styled-components";
 
+import { Outlet, Link } from "react-router-dom";
+
 const StyledNavbar = styled(Nav)`
   & a {
     margin-left: 1.3rem;
@@ -16,12 +18,18 @@ const StyledNavbar = styled(Nav)`
 const Links = () => {
   return (
     <StyledNavbar className="me-auto">
-      <Nav.Link href="#topTrending">Trending</Nav.Link>
-      <Nav.Link href="#everything">Everything</Nav.Link>
+      <Link className="nav-link" to="/articles">
+        Trending
+      </Link>
+
+      <Link className="nav-link" to="/everything">
+        Everything
+      </Link>
 
       {/* <Nav.Link href="#health">
         <span className="text-white">#</span>health
       </Nav.Link> */}
+      <Outlet />
     </StyledNavbar>
   );
 };

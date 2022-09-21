@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 // import { getTopHeadlines } from "./actions";
 
@@ -34,12 +35,16 @@ const LandingPage = () => {
 
   const { articles } = useSelector(({ articles }) => articles);
 
+  const navigate = useNavigate();
+
   return (
     <>
       <Navbar />
 
       <MainContainer>
         <HeaderTitle title="TRENDING NEWS" />
+
+        <button onClick={() => navigate("/articles")}> KLIKNI ME</button>
 
         <Categories />
         <div
