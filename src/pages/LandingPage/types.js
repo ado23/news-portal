@@ -6,3 +6,4 @@ export const GET_TOP_HEADLINES_SUCCESS =
   "app/LandingPage/GET_TOP_HEADLINES_SUCCESS";
 
 export const RESET = "app/LandingPage/RESET";
+export const RESET_ARTICLES_DATA = "app/LandingPage/RESET_ARTICLES_DATA";

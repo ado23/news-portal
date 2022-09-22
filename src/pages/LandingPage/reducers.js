@@ -1,4 +1,4 @@
-import { GET_TOP_HEADLINES_SUCCESS, RESET } from "./types";
+import { GET_TOP_HEADLINES_SUCCESS, RESET_ARTICLES_DATA, RESET } from "./types";
 
 const dummy = [
   {
@@ -356,11 +356,11 @@ export default function reducer(state = INITIAL_STATE, action) {
         ...state,
         articles: [...state.articles, ...action.payload.articles],
         totalResults: action.payload.totalResults,
-        filters: {
-          ...state.filters,
-          ...action.payload.filters
-        }
+        filters: { ...state.filters, ...action.payload.filters }
       };
+
+    case RESET_ARTICLES_DATA:
+      return { ...state, articles: [], totalResults: [] };
 
     case RESET:
       return INITIAL_STATE;

@@ -9,7 +9,7 @@ import MainContainer from "layout/MainContainer";
 
 import HeaderTitle from "components/HeaderTitle";
 
-import Search from "./features/Search";
+import FilteringTab from "./filtering";
 import LoadMore from "./features/LoadMore";
 import Categories from "./features/Categories";
 import RenderNewsCards from "./features/NewsCard";
@@ -30,21 +30,10 @@ const LandingPage = () => {
 
       <MainContainer>
         <HeaderTitle title="TRENDING NEWS" />
-
         <Categories />
 
-        <div
-          style={{
-            marginBottom: "1rem",
-            display: "flex",
-            justifyContent: "end"
-          }}
-        >
-          <Search />
-        </div>
-
+        <FilteringTab />
         <RenderNewsCards />
-
         <LoadMore />
       </MainContainer>
 
