@@ -15,8 +15,8 @@ const Image = styled.img`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  background: white;
 `;
 
 const NotFound = () => {
@@ -25,7 +25,7 @@ const NotFound = () => {
   return (
     <Container>
       <Image src={images.image404} alt="not found" />
-      <Button variant="success" onClick={() => navigate(-1)}>
+      <Button variant="success" size="lg" onClick={() => navigate(-1)}>
         TAKE ME BACK
       </Button>
     </Container>

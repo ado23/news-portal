@@ -18,7 +18,7 @@ const StyledNavbar = styled(Nav)`
 const Links = () => {
   return (
     <StyledNavbar className="me-auto">
-      <Link className="nav-link" to="/articles">
+      <Link className="nav-link" to="/">
         Trending
       </Link>
 
@@ -26,9 +26,6 @@ const Links = () => {
         Everything
       </Link>
 
-      {/* <Nav.Link href="#health">
-        <span className="text-white">#</span>health
-      </Nav.Link> */}
       <Outlet />
     </StyledNavbar>
   );

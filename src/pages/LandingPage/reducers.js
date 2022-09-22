@@ -337,9 +337,7 @@ const dummy = [
   }
 ];
 
-const INITIAL_STATE = {
-  articles: dummy,
-  totalResults: 0,
+const INITIAL_FILTERS = {
   filters: {
     country: "us",
     category: null,
@@ -347,6 +345,12 @@ const INITIAL_STATE = {
     pageSize: 20,
     page: 1
   }
+};
+
+const INITIAL_STATE = {
+  articles: dummy,
+  totalResults: 0,
+  ...INITIAL_FILTERS
 };
 
 export default function reducer(state = INITIAL_STATE, action) {
