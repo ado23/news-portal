@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import LandingPage from "pages/LandingPage";
 import ArticleDetailsPage from "pages/Article";
+import EverythingPage from "pages/EverythingPage";
 import NotFound from "pages/NotFound";
 
 import Loader from "containers/Loader";
@@ -14,6 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/articleDetails" element={<ArticleDetailsPage />} />
+          <Route path="/everything" element={<EverythingPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 

@@ -1,26 +1,28 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { reset } from "./actions";
-
 import Navbar from "layout/Navbar";
 import Footer from "layout/Footer";
 import MainContainer from "layout/MainContainer";
 
+import RenderNewsCards from "components/Cards";
 import HeaderTitle from "components/HeaderTitle";
-import { getTopHeadlines } from "./actions";
 
 import FilteringTab from "./filtering";
 import LoadMore from "./features/LoadMore";
-import Categories from "./features/Categories";
-import RenderNewsCards from "components/Cards";
 
-const LandingPage = () => {
+import { reset, getArticles } from "./actions";
+
+const EverythingPage = () => {
   const dispatch = useDispatch();
-  const { filters, articles } = useSelector(({ articles }) => articles);
+  const { articles, filters } = useSelector(
+    ({ articlesEverything }) => articlesEverything
+  );
+
+  console.log("articlesarticlesarticlesarticles", articles);
 
   useEffect(() => {
-    dispatch(getTopHeadlines(filters));
+    if (filters.q) dispatch(getArticles(filters));
 
     return () => dispatch(reset());
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -31,12 +33,13 @@ const LandingPage = () => {
       <Navbar />
 
       <MainContainer>
-        <HeaderTitle title="TRENDING NEWS" />
-        <Categories />
+        <HeaderTitle title="EVERYTHING" />
 
         <FilteringTab />
+
         <RenderNewsCards articles={articles} />
-        <LoadMore />
+
+        {articles.length > 0 && <LoadMore />}
       </MainContainer>
 
       <Footer />
@@ -44,4 +47,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default EverythingPage;

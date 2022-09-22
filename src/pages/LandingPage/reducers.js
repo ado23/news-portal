@@ -348,7 +348,7 @@ const INITIAL_FILTERS = {
 };
 
 const INITIAL_STATE = {
-  articles: dummy,
+  articles: [],
   totalResults: 0,
   ...INITIAL_FILTERS
 };

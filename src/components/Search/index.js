@@ -8,12 +8,7 @@ const StyledInputGroup = styled(InputGroup)`
   width: ${({ $customWidth }) => $customWidth};
 `;
 
-const SearchComponent = ({
-  handleKeyPress,
-  handleOnClick,
-  placeholder,
-  width
-}) => (
+const SearchComponent = ({ handleKeyPress, placeholder, width }) => (
   <StyledInputGroup className="d-flex" $customWidth={width}>
     <Magnifier />
 
@@ -22,7 +17,6 @@ const SearchComponent = ({
       aria-label="Search"
       placeholder={placeholder}
       onKeyPress={(event) => handleKeyPress(event)}
-      onClick={(event) => handleOnClick(event)}
     />
   </StyledInputGroup>
 );

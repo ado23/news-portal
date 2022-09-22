@@ -9,6 +9,8 @@ import Navbar from "layout/Navbar";
 import Footer from "layout/Footer";
 import MainContainer from "layout/MainContainer";
 
+import { ReactComponent as UserIcon } from "assets/icons/user.svg";
+
 import {
   Container,
   Image,
@@ -42,8 +44,14 @@ const Article = () => {
                 marginTop: "1rem"
               }}
             >
-              <h4>Author: {author}</h4>
-              <h4>{publishedAt}</h4>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <UserIcon />
+                <p className="font-weight-light"> {author} </p>
+              </div>
+
+              <p className="font-weight-light">
+                {new Date(publishedAt).toDateString("en-US")}
+              </p>
             </div>
           </div>
 
@@ -54,7 +62,7 @@ const Article = () => {
 
           <Button
             variant="outline-secondary"
-            onClick={() => navigate("/")}
+            onClick={() => navigate(-1)}
             style={{ alignSelf: "end" }}
           >
             BACK
