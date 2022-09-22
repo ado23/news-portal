@@ -21,7 +21,7 @@ const App = () => {
     >
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route exact path="/" element={<LandingPage />} />
           <Route path="/articleDetails" element={<ArticleDetailsPage />} />
           <Route path="/everything" element={<EverythingPage />} />
           <Route path="*" element={<NotFound />} />
