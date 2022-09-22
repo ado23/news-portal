@@ -11,8 +11,15 @@ class BaseApi {
     headers: { Authorization: config.key }
   });
 
-  generateQueryFilters = (filter) =>
-    Object.entries(filter)
+  generateQueryFilters = (filterObject) =>
+    Object.keys(filterObject)
+      .reduce((acc, key) => {
+        if (filterObject[key]) {
+          acc = [...acc, [key, filterObject[key]]];
+        }
+
+        return acc;
+      }, [])
       .map((e) => e.join("="))
       .join("&");
 
@@ -42,7 +49,9 @@ class BaseApi {
     const fullUrl = this.generateFullUrl(filter);
     const requestOptions = this.generateRequestHeaders();
 
-    return fetch(fullUrl, requestOptions).then((response) => this.handleResponse(response));
+    return fetch(fullUrl, requestOptions).then((response) =>
+      this.handleResponse(response)
+    );
   };
 }
 

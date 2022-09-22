@@ -12,10 +12,22 @@ function* getTopHeadlines(action) {
       payload: "app/LandingPage/getTopHeadlines"
     });
 
-    const { filter } = action.payload;
-    const response = yield call(TopHeadlines.getData, filter);
+    const filters = action.payload;
+    const response = yield call(TopHeadlines.getData, filters);
 
-    yield put({ type: GET_TOP_HEADLINES_SUCCESS, payload: response.articles });
+    console.log("RESPONSE: ", response);
+
+    const payload = {
+      articles: response.articles,
+      totalResults: response.totalResults,
+      filters
+    };
+    console.log(
+      "🚀 ~ file: sagas.js ~ line 22 ~ function*getTopHeadlines ~ payload",
+      payload
+    );
+
+    yield put({ type: GET_TOP_HEADLINES_SUCCESS, payload });
   } catch (error) {
     let catchedError = yield error.json();
     console.log("catchedError", catchedError);
