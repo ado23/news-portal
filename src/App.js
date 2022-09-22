@@ -10,7 +10,15 @@ import Loader from "containers/Loader";
 
 const App = () => {
   return (
-    <div style={{ background: "whitesmoke" }}>
+    <div
+      style={{
+        background: "whitesmoke",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between"
+      }}
+    >
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<LandingPage />} />

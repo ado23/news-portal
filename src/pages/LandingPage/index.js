@@ -28,16 +28,18 @@ const LandingPage = () => {
 
   return (
     <>
-      <Navbar />
+      <div style={{ background: "whitesmoke" }}>
+        <Navbar />
 
-      <MainContainer>
-        <HeaderTitle title="TRENDING NEWS" />
-        <Categories />
+        <MainContainer>
+          <HeaderTitle title="TRENDING NEWS" />
+          <Categories />
 
-        <FilteringTab />
-        <RenderNewsCards articles={articles} />
-        <LoadMore />
-      </MainContainer>
+          <FilteringTab />
+          <RenderNewsCards articles={articles} />
+          <LoadMore />
+        </MainContainer>
+      </div>
 
       <Footer />
     </>

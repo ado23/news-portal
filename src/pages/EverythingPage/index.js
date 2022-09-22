@@ -30,17 +30,18 @@ const EverythingPage = () => {
 
   return (
     <>
-      <Navbar />
+      <div>
+        <Navbar />
 
-      <MainContainer>
-        <HeaderTitle title="EVERYTHING" />
+        <MainContainer>
+          <HeaderTitle title="EVERYTHING" />
 
-        <FilteringTab />
+          <FilteringTab />
 
-        <RenderNewsCards articles={articles} />
-
-        {articles.length > 0 && <LoadMore />}
-      </MainContainer>
+          {articles.length > 0 && <RenderNewsCards articles={articles} />}
+          {articles.length > 0 && <LoadMore />}
+        </MainContainer>
+      </div>
 
       <Footer />
     </>

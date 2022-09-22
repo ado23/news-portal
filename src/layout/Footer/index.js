@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import { ReactComponent as GithubIcon } from "assets/icons/github.svg";
+
 const Container = styled.div`
   .bd-placeholder-img {
     font-size: 1.125rem;
@@ -37,6 +39,8 @@ const Container = styled.div`
   .my-4 {
     margin-bottom: 0px !important;
   }
+
+  background: whitesmoke;
 `;
 
 const Footer = () => (
@@ -47,8 +51,11 @@ const Footer = () => (
 
         <ul className="nav col-md-4 justify-content-end">
           <li className="nav-item">
-            <a href="/#" className="nav-link px-2 text-muted">
-              About
+            <a
+              href="https://github.com/ado23"
+              className="nav-link px-2 text-muted"
+            >
+              <GithubIcon />
             </a>
           </li>
         </ul>
