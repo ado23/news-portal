@@ -8,7 +8,6 @@ const NavDropdownExample = () => {
   const { articles, filters } = useSelector(
     ({ articlesEverything }) => articlesEverything
   );
-
   const config = ["relevancy", "popularity", "publishedAt"];
 
   const handleSelect = (eventKey) => {
