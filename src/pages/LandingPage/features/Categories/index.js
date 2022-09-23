@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ToggleButton, ButtonGroup } from "react-bootstrap";
+import { ToggleButton } from "react-bootstrap";
 
 import config from "./config";
 import { Hashtag, Container } from "./styledComponents";
@@ -34,28 +34,26 @@ const Categories = () => {
 
   return (
     <Container>
-      <ButtonGroup className="mb-2" style={{ width: "100%" }}>
-        {config.map((element, idx) => (
-          <ToggleButton
-            key={idx}
-            id={`radio-${idx}`}
-            type="radio"
-            variant="dark"
-            name="radio"
-            value={element.value}
-            checked={category === element.name}
-            onChange={(e) => handleChange(e.currentTarget.value)}
+      {config.map((element, idx) => (
+        <ToggleButton
+          key={idx}
+          id={`radio-${idx}`}
+          type="radio"
+          variant="dark"
+          name="radio"
+          value={element.value}
+          checked={category === element.name}
+          onChange={(e) => handleChange(e.currentTarget.value)}
+        >
+          <Hashtag
+            className={`text-${element["color"]} border border-${element["color"]}`}
           >
-            <Hashtag
-              className={`text-${element["color"]} border border-${element["color"]}`}
-            >
-              #
-            </Hashtag>
+            #
+          </Hashtag>
 
-            <span className="text-white text-uppercase"> {element.name}</span>
-          </ToggleButton>
-        ))}
-      </ButtonGroup>
+          <span className="text-white text-uppercase"> {element.name}</span>
+        </ToggleButton>
+      ))}
     </Container>
   );
 };

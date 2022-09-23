@@ -2,9 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 import Search from "./Search";
-import Country from "../features/Country";
+import Country from "./Country";
 
 import ResetFilters from "./Reset";
+
+// import { Container } from "react-bootstrap";
 
 const Container = styled.div`
   margin-bottom: 1rem;
