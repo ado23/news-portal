@@ -5,15 +5,16 @@ import Navbar from "layout/Navbar";
 import Footer from "layout/Footer";
 import MainContainer from "layout/MainContainer";
 
-import HeaderTitle from "components/HeaderTitle";
-import { getTopHeadlines } from "./actions";
 import { reset } from "./actions";
+import { getTopHeadlines } from "./actions";
+
+import NoResults from "components/NoResults";
+import RenderNewsCards from "components/Cards";
+import HeaderTitle from "components/HeaderTitle";
 
 import FilteringTab from "./filtering";
 import LoadMore from "./features/LoadMore";
 import Categories from "./features/Categories";
-import RenderNewsCards from "components/Cards";
-import NoResults from "components/NoResults";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
