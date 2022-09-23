@@ -13,6 +13,7 @@ import FilteringTab from "./filtering";
 import LoadMore from "./features/LoadMore";
 import Categories from "./features/Categories";
 import RenderNewsCards from "components/Cards";
+import NoResults from "components/NoResults";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -36,7 +37,9 @@ const LandingPage = () => {
 
           <FilteringTab />
           <RenderNewsCards articles={articles} />
-          <LoadMore />
+          {articles.length > 0 && <LoadMore />}
+
+          {articles.length === 0 && <NoResults title="No results" />}
         </MainContainer>
       </div>
 

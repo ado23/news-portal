@@ -11,6 +11,8 @@ import HeaderTitle from "components/HeaderTitle";
 import FilteringTab from "./filtering";
 import LoadMore from "./features/LoadMore";
 
+import NoResults from "components/NoResults";
+
 import { reset, getArticles } from "./actions";
 
 const EverythingPage = () => {
@@ -39,6 +41,8 @@ const EverythingPage = () => {
 
           {articles.length > 0 && <RenderNewsCards articles={articles} />}
           {articles.length > 0 && <LoadMore />}
+
+          {articles.length === 0 && <NoResults title="No results" />}
         </MainContainer>
       </div>
 
