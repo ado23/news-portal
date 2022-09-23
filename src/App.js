@@ -9,13 +9,18 @@ import NotFound from "pages/NotFound";
 import Loader from "containers/Loader";
 import AppContainer from "layout/AppContainer";
 
+import ROUTE_PATHS from "routePaths";
+
 const App = () => (
   <AppContainer>
     <Suspense fallback={<Loader />}>
       <Routes>
-        <Route exact path="/" element={<LandingPage />} />
-        <Route path="/articleDetails" element={<ArticleDetailsPage />} />
-        <Route path="/everything" element={<EverythingPage />} />
+        <Route exact path={ROUTE_PATHS.Home} element={<LandingPage />} />
+        <Route
+          path={ROUTE_PATHS.ArticleDetails}
+          element={<ArticleDetailsPage />}
+        />
+        <Route path={ROUTE_PATHS.Everything} element={<EverythingPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

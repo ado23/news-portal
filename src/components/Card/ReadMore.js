@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { setArticle } from "pages/Article/actions";
+import ROUTE_PATHS from "routePaths";
 
 const ReadMore = ({
   article: {
@@ -32,7 +33,7 @@ const ReadMore = ({
     };
 
     dispatch(setArticle(payload));
-    navigate("/articleDetails");
+    navigate(ROUTE_PATHS.ArticleDetails);
   };
 
   return (
