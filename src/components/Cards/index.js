@@ -1,16 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Row, Col } from "react-bootstrap";
 
-import NewsCard from "components/Card";
+import Card from "components/Card";
 
-const RenderNewsCard = ({ articles }) => (
+const RenderCards = ({ articles }) => (
   <Row xs={1} sm={1} md={2} lg={3} xl={4} className="g-4">
     {articles.map((article, idx) => (
       <Col key={idx}>
-        <NewsCard article={article} />
+        <Card article={article} />
       </Col>
     ))}
   </Row>
 );
 
-export default RenderNewsCard;
+RenderCards.propTypes = {
+  articles: PropTypes.array.isRequired
+};
+
+export default RenderCards;

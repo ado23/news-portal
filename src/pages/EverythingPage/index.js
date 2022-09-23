@@ -11,15 +11,26 @@ import HeaderTitle from "components/HeaderTitle";
 import FilteringTab from "./filtering";
 import LoadMore from "./features/LoadMore";
 
+import NoResults from "components/NoResults";
+
 import { reset, getArticles } from "./actions";
+
+const RenderContent = ({ articles }) => {
+  if (articles.length === 0) return <NoResults title="No results" />;
+
+  return (
+    <>
+      <RenderNewsCards articles={articles} />
+      <LoadMore />
+    </>
+  );
+};
 
 const EverythingPage = () => {
   const dispatch = useDispatch();
   const { articles, filters } = useSelector(
     ({ articlesEverything }) => articlesEverything
   );
-
-  console.log("articlesarticlesarticlesarticles", articles);
 
   useEffect(() => {
     if (filters.q) dispatch(getArticles(filters));
@@ -35,11 +46,9 @@ const EverythingPage = () => {
 
         <MainContainer>
           <HeaderTitle title="EVERYTHING" />
-
           <FilteringTab />
 
-          {articles.length > 0 && <RenderNewsCards articles={articles} />}
-          {articles.length > 0 && <LoadMore />}
+          <RenderContent articles={articles} />
         </MainContainer>
       </div>
 

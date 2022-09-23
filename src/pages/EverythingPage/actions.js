@@ -1,8 +1,15 @@
-import { GET_ARTICLES, RESET_ARTICLES_DATA, RESET } from "./types";
+import { GET_ARTICLES, RESET_ARTICLES_DATA, SET_FILTERS, RESET } from "./types";
 
 export function getArticles(payload) {
   return {
     type: GET_ARTICLES,
+    payload
+  };
+}
+
+export function setFilters(payload) {
+  return {
+    type: SET_FILTERS,
     payload
   };
 }

@@ -1,9 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { setArticle } from "pages/Article/actions";
+import ROUTE_PATHS from "routePaths";
 
 const ReadMore = ({
   article: {
@@ -31,7 +33,7 @@ const ReadMore = ({
     };
 
     dispatch(setArticle(payload));
-    navigate("/articleDetails");
+    navigate(ROUTE_PATHS.ArticleDetails);
   };
 
   return (
@@ -39,6 +41,10 @@ const ReadMore = ({
       Read more
     </Button>
   );
+};
+
+ReadMore.propTypes = {
+  article: PropTypes.object.isRequired
 };
 
 export default ReadMore;

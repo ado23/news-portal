@@ -1,5 +1,6 @@
 import { takeEvery, put, call } from "redux-saga/effects";
 
+import { ERROR } from "containers/ErrorHandling/types";
 import { GET_ARTICLES, GET_ARTICLES_SUCCESS } from "./types";
 import { SHOW_LOADING, HIDE_LOADING } from "containers/Loader/types";
 
@@ -23,8 +24,7 @@ function* getEverything(action) {
 
     yield put({ type: GET_ARTICLES_SUCCESS, payload });
   } catch (error) {
-    let catchedError = yield error.json();
-    console.log("catchedError", catchedError);
+    yield put({ type: ERROR, error });
   } finally {
     yield put({
       type: HIDE_LOADING,

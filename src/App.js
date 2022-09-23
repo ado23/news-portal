@@ -7,30 +7,26 @@ import EverythingPage from "pages/EverythingPage";
 import NotFound from "pages/NotFound";
 
 import Loader from "containers/Loader";
+import AppContainer from "layout/AppContainer";
 
-const App = () => {
-  return (
-    <div
-      style={{
-        background: "whitesmoke",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between"
-      }}
-    >
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route exact path="/" element={<LandingPage />} />
-          <Route path="/articleDetails" element={<ArticleDetailsPage />} />
-          <Route path="/everything" element={<EverythingPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+import ROUTE_PATHS from "routePaths";
 
-        <Loader />
-      </Suspense>
-    </div>
-  );
-};
+const App = () => (
+  <AppContainer>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route exact path={ROUTE_PATHS.Home} element={<LandingPage />} />
+        <Route
+          path={ROUTE_PATHS.ArticleDetails}
+          element={<ArticleDetailsPage />}
+        />
+        <Route path={ROUTE_PATHS.Everything} element={<EverythingPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      <Loader />
+    </Suspense>
+  </AppContainer>
+);
 
 export default App;

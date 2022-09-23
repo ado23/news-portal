@@ -17,6 +17,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background: white;
+  height: 100%;
 `;
 
 const NotFound = () => {

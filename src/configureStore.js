@@ -9,7 +9,6 @@ import { composeWithDevTools } from "redux-devtools-extension";
 export default function configureStore(preloadedState) {
   const sagaMiddleware = createSagaMiddleware({
     onError(error) {
-      console.log("Saga ERROR createSagaMiddleware");
       console.log(error);
     }
   });

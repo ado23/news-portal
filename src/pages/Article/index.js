@@ -1,78 +1,77 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { Button } from "react-bootstrap";
-
-// import { getTopHeadlines } from "./actions";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import Navbar from "layout/Navbar";
 import Footer from "layout/Footer";
 import MainContainer from "layout/MainContainer";
 
-import { ReactComponent as UserIcon } from "assets/icons/user.svg";
-
 import {
-  Container,
   Image,
   Source,
+  Divider,
+  Content,
+  Container,
   Description,
-  Content
+  UserAndDate,
+  UserContainer,
+  StyledUserIcon,
+  UserIconContainer,
+  FullWidthContainer,
+  NavbarContentContainer
 } from "./styledComponents";
 
-const Article = () => {
+const ArticleDetails = () => {
   const navigate = useNavigate();
-
   const { source, author, title, description, content, image, publishedAt } =
     useSelector(({ articleDetails }) => articleDetails);
 
   return (
     <>
-      <Navbar />
+      <NavbarContentContainer>
+        <Navbar />
 
-      <MainContainer>
-        <Container>
-          <div style={{ width: "100%" }}>
-            <h3 style={{ margin: "2rem 0 0 0" }}>{title}</h3>
-            <hr style={{ border: "2px solid", background: "black" }} />
+        <MainContainer>
+          <Container>
+            <FullWidthContainer>
+              <h3>{title}</h3>
 
-            <Image src={image} />
+              <Divider />
+              <Content>{content}</Content>
+              <Image src={image} />
 
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "1rem"
-              }}
+              <UserAndDate>
+                <UserContainer>
+                  <UserIconContainer>
+                    <StyledUserIcon />
+                  </UserIconContainer>
+                  <p className="font-weight-light"> {author} </p>
+                </UserContainer>
+
+                <p className="font-weight-light">
+                  {new Date(publishedAt).toDateString("en-US")}
+                </p>
+              </UserAndDate>
+            </FullWidthContainer>
+
+            <Source>{source}</Source>
+            <Description className="h4">{description}</Description>
+
+            <Button
+              variant="outline-secondary"
+              style={{ alignSelf: "end" }}
+              onClick={() => navigate(-1)}
             >
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <UserIcon />
-                <p className="font-weight-light"> {author} </p>
-              </div>
-
-              <p className="font-weight-light">
-                {new Date(publishedAt).toDateString("en-US")}
-              </p>
-            </div>
-          </div>
-
-          <Source>{source}</Source>
-
-          <Description>{description}</Description>
-          <Content>{content}</Content>
-
-          <Button
-            variant="outline-secondary"
-            onClick={() => navigate(-1)}
-            style={{ alignSelf: "end" }}
-          >
-            BACK
-          </Button>
-        </Container>
-      </MainContainer>
+              BACK
+            </Button>
+          </Container>
+        </MainContainer>
+      </NavbarContentContainer>
 
       <Footer />
     </>
   );
 };
 
-export default Article;
+export default ArticleDetails;
