@@ -1,4 +1,9 @@
-import { GET_TOP_HEADLINES, RESET_ARTICLES_DATA, RESET } from "./types";
+import {
+  GET_TOP_HEADLINES,
+  RESET_ARTICLES_DATA,
+  SET_FILTERS,
+  RESET
+} from "./types";
 
 export function getTopHeadlines(payload) {
   return {
@@ -10,6 +15,13 @@ export function getTopHeadlines(payload) {
 export function resetArticlesData() {
   return {
     type: RESET_ARTICLES_DATA
+  };
+}
+
+export function setFilters(payload) {
+  return {
+    type: SET_FILTERS,
+    payload
   };
 }
 

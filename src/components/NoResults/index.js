@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const NoResults = ({ title }) => (
   <Container>
-    <p class="font-monospace h1">{title}</p>
+    <p className="font-monospace h1">{title}</p>
   </Container>
 );
 

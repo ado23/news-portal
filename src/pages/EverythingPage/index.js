@@ -42,7 +42,15 @@ const EverythingPage = () => {
           {articles.length > 0 && <RenderNewsCards articles={articles} />}
           {articles.length > 0 && <LoadMore />}
 
-          {articles.length === 0 && <NoResults title="No results" />}
+          {articles.length === 0 && (
+            <NoResults
+              title={
+                filters.q === null
+                  ? "Enter keyword or phrase to get results"
+                  : "No results"
+              }
+            />
+          )}
         </MainContainer>
       </div>
 

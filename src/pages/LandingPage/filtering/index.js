@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Search from "../features/Search";
+import Search from "./Search";
 import Country from "../features/Country";
 
 import ResetFilters from "./Reset";
@@ -12,16 +12,20 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
+const CountryAndSearch = styled.div`
+  display: flex;
+`;
+
 const FilteringTab = () => (
   <Container>
     <div>
       <ResetFilters />
     </div>
 
-    <div style={{ display: "flex" }}>
+    <CountryAndSearch>
       <Search />
       <Country />
-    </div>
+    </CountryAndSearch>
   </Container>
 );
 

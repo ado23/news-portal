@@ -1,4 +1,9 @@
-import { GET_ARTICLES_SUCCESS, RESET_ARTICLES_DATA, RESET } from "./types";
+import {
+  GET_ARTICLES_SUCCESS,
+  RESET_ARTICLES_DATA,
+  SET_FILTERS,
+  RESET
+} from "./types";
 
 const INITIAL_FILTERS = {
   filters: {
@@ -24,6 +29,9 @@ export default function reducer(state = INITIAL_STATE, action) {
         totalResults: action.payload.totalResults,
         filters: { ...state.filters, ...action.payload.filters }
       };
+
+    case SET_FILTERS:
+      return { ...state, filters: { ...state.filters, ...action.payload } };
 
     case RESET_ARTICLES_DATA:
       return { ...state, articles: [], totalResults: [] };
