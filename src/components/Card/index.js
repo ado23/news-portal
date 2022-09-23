@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Card } from "react-bootstrap";
 
 import {
@@ -36,6 +37,10 @@ const NewsCard = ({ article }) => {
       </Card.Footer>
     </Card>
   );
+};
+
+NewsCard.propTypes = {
+  article: PropTypes.object.isRequired
 };
 
 export default NewsCard;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -39,6 +40,10 @@ const ReadMore = ({
       Read more
     </Button>
   );
+};
+
+ReadMore.propTypes = {
+  article: PropTypes.object.isRequired
 };
 
 export default ReadMore;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Form, InputGroup } from "react-bootstrap";
 
@@ -28,5 +29,12 @@ const SearchComponent = ({ handleKeyPress, placeholder, width, value }) => (
     </Form>
   </StyledInputGroup>
 );
+
+SearchComponent.propTypes = {
+  handleKeyPress: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  width: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired
+};
 
 export default SearchComponent;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Row, Col } from "react-bootstrap";
 
 import Card from "components/Card";
@@ -12,5 +13,9 @@ const RenderCards = ({ articles }) => (
     ))}
   </Row>
 );
+
+RenderCards.propTypes = {
+  articles: PropTypes.array.isRequired
+};
 
 export default RenderCards;

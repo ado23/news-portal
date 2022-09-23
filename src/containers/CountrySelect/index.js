@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Dropdown } from "react-bootstrap";
 
 import flags from "assets/flags";
@@ -26,5 +27,11 @@ const CountriesSelector = ({ value, countries, handleSelect }) => (
     ))}
   </StyledDropdownButton>
 );
+
+CountriesSelector.propTypes = {
+  value: PropTypes.string.isRequired,
+  countries: PropTypes.array.isRequired,
+  handleSelect: PropTypes.func.isRequired
+};
 
 export default CountriesSelector;
