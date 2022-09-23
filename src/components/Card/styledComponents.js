@@ -16,6 +16,6 @@ export const CardTitle = styled(Card.Title)`
 `;
 
 export const CardTextContainer = styled.div`
-  maxheight: 9rem;
+  max-height: 9rem;
   overflow: hidden;
 `;

@@ -10,7 +10,7 @@ const LoadMoreButton = ({ onClickHandler, isDisabled }) => (
   <StyledButton
     onClick={onClickHandler}
     disabled={isDisabled}
-    variant="info text-dark"
+    variant="success text-white"
   >
     Load more ...
   </StyledButton>

@@ -27,7 +27,7 @@ const NewsCard = ({ article }) => {
         <hr />
 
         <CardTextContainer>
-          <Card.Text style={{ fontSize: "14px" }}>{description}</Card.Text>
+          <Card.Text className="h7">{description}</Card.Text>
         </CardTextContainer>
       </CardBody>
 

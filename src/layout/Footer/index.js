@@ -4,43 +4,11 @@ import styled from "styled-components";
 import { ReactComponent as GithubIcon } from "assets/icons/github.svg";
 
 const Container = styled.div`
-  .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
-
-  .nav-scroller {
-    position: relative;
-    z-index: 2;
-    height: 2.75rem;
-    overflow-y: hidden;
-  }
-
-  .nav-scroller .nav {
-    display: flex;
-    flex-wrap: nowrap;
-    padding-bottom: 1rem;
-    margin-top: -1px;
-    overflow-x: auto;
-    text-align: center;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
+  background: whitesmoke;
 
   .my-4 {
     margin-bottom: 0px !important;
   }
-
-  background: whitesmoke;
 `;
 
 const Footer = () => (
@@ -53,6 +21,8 @@ const Footer = () => (
           <li className="nav-item">
             <a
               href="https://github.com/ado23"
+              target="_blank"
+              rel="noopener noreferrer"
               className="nav-link px-2 text-muted"
             >
               <GithubIcon />

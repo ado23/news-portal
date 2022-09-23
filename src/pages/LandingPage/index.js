@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { reset } from "./actions";
-
 import Navbar from "layout/Navbar";
 import Footer from "layout/Footer";
 import MainContainer from "layout/MainContainer";
 
 import HeaderTitle from "components/HeaderTitle";
 import { getTopHeadlines } from "./actions";
+import { reset } from "./actions";
 
 import FilteringTab from "./filtering";
 import LoadMore from "./features/LoadMore";

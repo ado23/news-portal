@@ -35,7 +35,6 @@ const EverythingPage = () => {
 
         <MainContainer>
           <HeaderTitle title="EVERYTHING" />
-
           <FilteringTab />
 
           {articles.length > 0 && <RenderNewsCards articles={articles} />}
