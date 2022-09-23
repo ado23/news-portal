@@ -14,20 +14,22 @@ const StyledFomControl = styled(Form.Control)`
 `;
 
 const SearchComponent = ({ handleKeyPress, placeholder, width, value }) => (
-  <StyledInputGroup className="d-flex" $customWidth={width}>
-    <Magnifier />
+  <div>
+    <StyledInputGroup className="d-flex" $customWidth={width}>
+      <Magnifier />
 
-    <Form style={{ width: "86%" }}>
-      <StyledFomControl
-        value={value}
-        type="search"
-        aria-label="Search"
-        placeholder={placeholder}
-        onKeyPress={(event) => handleKeyPress(event)}
-        onChange={(event) => handleKeyPress(event)}
-      />
-    </Form>
-  </StyledInputGroup>
+      <Form style={{ width: "86%" }}>
+        <StyledFomControl
+          value={value}
+          type="search"
+          aria-label="Search"
+          placeholder={placeholder}
+          onKeyPress={(event) => handleKeyPress(event)}
+          onChange={(event) => handleKeyPress(event)}
+        />
+      </Form>
+    </StyledInputGroup>
+  </div>
 );
 
 SearchComponent.propTypes = {
