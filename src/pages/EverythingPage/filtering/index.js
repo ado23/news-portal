@@ -18,7 +18,7 @@ const FilteringTab = () => (
       <ResetFilters />
     </div>
 
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", alignItems: "center" }}>
       <Sort />
       <Search />
     </div>

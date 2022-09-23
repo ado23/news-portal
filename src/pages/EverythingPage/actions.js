@@ -1,7 +1,6 @@
 import { GET_ARTICLES, RESET_ARTICLES_DATA, SET_FILTERS, RESET } from "./types";
 
 export function getArticles(payload) {
-  console.log("payload: ", payload);
   return {
     type: GET_ARTICLES,
     payload

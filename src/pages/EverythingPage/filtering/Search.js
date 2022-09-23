@@ -16,10 +16,7 @@ const SearchComponent = () => {
 
     const newFilter = { ...filters, q: searchFilterValue };
 
-    console.log("SADJADJAS: ", newFilter);
-
     if (event.charCode === 13) {
-      console.log("UDEM VODEJ", newFilter);
       dispatch(resetArticlesData());
       dispatch(getArticles(newFilter));
     }

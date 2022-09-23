@@ -1,43 +1,30 @@
 import React from "react";
-import { Dropdown, NavDropdown } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 
 import flags from "assets/flags";
-import { StyledDropdown } from "./styledComponents";
+import { StyledDropdownButton } from "./styledComponents";
 
 const CountriesSelector = ({ value, countries, handleSelect }) => (
-  <StyledDropdown
-    title={<img src={flags[value]} alt="ss" width="45%" />}
-    onSelect={(selected) => handleSelect(selected)}
+  <StyledDropdownButton
+    title={<img src={flags[value]} alt="ss" width="35%" />}
+    id="dropdown-menu"
+    variant="light"
+    onSelect={(event) => handleSelect(event)}
   >
-    {countries.map((element, idx) => {
-      const { country, uuid } = element;
-
-      return (
-        <>
-          <NavDropdown.Item
-            key={uuid}
-            eventKey={country}
-            active={value === country}
-          >
-            <div
-              style={{
-                display: "flex",
-                // justifyContent: "space-evenly",
-                alignItems: "center",
-                height: "1rem",
-                width: "3rem"
-              }}
-            >
-              <img style={{ width: "60%" }} src={flags[country]} alt="" />
-              <span style={{ fontSize: "14px" }}> {country} </span>
-            </div>
-          </NavDropdown.Item>
-
-          {countries.length > idx + 1 && <Dropdown.Divider />}
-        </>
-      );
-    })}
-  </StyledDropdown>
+    {countries.map((element, idx) => (
+      <Dropdown.Item
+        key={idx}
+        as="button"
+        eventKey={element.country}
+        active={value === element.country}
+      >
+        <div>
+          <img style={{ width: "60%" }} src={flags[element.country]} alt="" />
+          {element.country}
+        </div>
+      </Dropdown.Item>
+    ))}
+  </StyledDropdownButton>
 );
 
 export default CountriesSelector;

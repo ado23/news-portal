@@ -14,6 +14,7 @@ const Container = styled.div`
 
 const CountryAndSearch = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const FilteringTab = () => (
