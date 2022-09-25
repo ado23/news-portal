@@ -14,8 +14,12 @@ const StyledFomControl = styled(Form.Control)`
 `;
 
 const SearchComponent = ({ handleKeyPress, placeholder, width, value }) => (
-  <div>
-    <StyledInputGroup className="d-flex" $customWidth={width}>
+  <div data-testid="search-component-main-div">
+    <StyledInputGroup
+      data-testid="search-input-group"
+      className="d-flex"
+      $customWidth={width}
+    >
       <Magnifier />
 
       <Form style={{ width: "86%" }}>
