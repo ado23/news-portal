@@ -7,7 +7,7 @@ import { StyledDropdownButton } from "./styledComponents";
 
 const CountriesSelector = ({ value, countries, handleSelect }) => (
   <StyledDropdownButton
-    title={<img src={flags[value]} alt="ss" width="35%" />}
+    title={<img src={flags[value]} alt="x" width="35%" />}
     id="dropdown-menu"
     variant="light"
     onSelect={(event) => handleSelect(event)}

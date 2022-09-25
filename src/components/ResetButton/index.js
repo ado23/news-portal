@@ -6,7 +6,7 @@ import { ReactComponent as ResetIcon } from "assets/icons/reset.svg";
 
 const ResetButton = ({ handleReset }) => (
   <Button variant="outline-secondary" onClick={handleReset}>
-    <ResetIcon />
+    <ResetIcon data-testid="reset-button-icon" />
   </Button>
 );
 
