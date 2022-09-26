@@ -22,16 +22,14 @@ const SearchComponent = ({ handleKeyPress, placeholder, width, value }) => (
     >
       <Magnifier />
 
-      <Form style={{ width: "86%" }}>
-        <StyledFomControl
-          value={value}
-          type="search"
-          aria-label="Search"
-          placeholder={placeholder}
-          onKeyPress={(event) => handleKeyPress(event)}
-          onChange={(event) => handleKeyPress(event)}
-        />
-      </Form>
+      <StyledFomControl
+        value={value}
+        type="search"
+        aria-label="Search"
+        placeholder={placeholder}
+        onKeyPress={(event) => handleKeyPress(event)}
+        onChange={(event) => handleKeyPress(event)}
+      />
     </StyledInputGroup>
   </div>
 );
