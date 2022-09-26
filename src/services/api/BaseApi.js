@@ -4,8 +4,6 @@ class BaseApi {
   constructor() {
     this.type = "";
     this.baseUrl = config.host;
-
-    console.log("process", process.env.REACT_APP_API_KEY);
   }
 
   generateRequestHeaders = () => ({

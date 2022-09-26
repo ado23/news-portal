@@ -21,18 +21,16 @@ const Country = () => {
   };
 
   return (
-    <div style={{ marginLeft: "1rem" }}>
-      <TooltipComponent
-        message="Choose country/region from which you want to see news"
-        placement="top"
-      >
-        <CountrySelect
-          countries={countries}
-          handleSelect={handleSelect}
-          value={country.toUpperCase()}
-        />
-      </TooltipComponent>
-    </div>
+    <TooltipComponent
+      message="Choose country/region from which you want to see news"
+      placement="top"
+    >
+      <CountrySelect
+        countries={countries}
+        handleSelect={handleSelect}
+        value={country.toUpperCase()}
+      />
+    </TooltipComponent>
   );
 };
 
