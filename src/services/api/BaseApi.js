@@ -4,11 +4,13 @@ class BaseApi {
   constructor() {
     this.type = "";
     this.baseUrl = config.host;
+
+    console.log("process", process.env.REACT_APP_API_KEY);
   }
 
   generateRequestHeaders = () => ({
     method: "GET",
-    headers: { Authorization: config.key }
+    headers: { Authorization: process.env.REACT_APP_API_KEY }
   });
 
   generateQueryFilters = (filterObject) =>

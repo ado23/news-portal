@@ -25,7 +25,7 @@ const NotFound = () => {
 
   return (
     <Container>
-      <Image src={images.image404} alt="not found" />
+      <Image src={images.image404} alt="not found img" />
       <Button variant="success" size="lg" onClick={() => navigate(-1)}>
         TAKE ME BACK
       </Button>

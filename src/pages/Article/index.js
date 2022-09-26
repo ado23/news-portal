@@ -32,14 +32,14 @@ const ArticleDetails = () => {
       <NavbarContentContainer>
         <Navbar />
 
-        <MainContainer>
+        <MainContainer data-testid="article-details-main">
           <Container>
             <FullWidthContainer>
               <h3>{title}</h3>
 
               <Divider />
               <Content>{content}</Content>
-              <Image src={image} />
+              <Image src={image} alt="article-details-img" />
 
               <UserAndDate>
                 <UserContainer>
