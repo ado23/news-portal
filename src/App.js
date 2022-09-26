@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import LandingPage from "pages/LandingPage";
 import ArticleDetailsPage from "pages/Article";
@@ -11,7 +11,13 @@ import AppContainer from "layout/AppContainer";
 
 import ROUTE_PATHS from "routePaths";
 
-const App = () => (
+export const LocationDisplay = () => {
+  const location = useLocation();
+
+  return <div data-testid="location-display">{location.pathname}</div>;
+};
+
+export const App = () => (
   <AppContainer>
     <Suspense fallback={<Loader />}>
       <Routes>
@@ -24,9 +30,8 @@ const App = () => (
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <Loader />
+      {/* <Loader /> */}
+      <LocationDisplay />
     </Suspense>
   </AppContainer>
 );
-
-export default App;

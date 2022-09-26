@@ -1,6 +1,5 @@
 const config = {
-  host: "https://newsapi.org/v2/",
-  key: "ad60df35e22848bc880ec11212dc060b"
+  host: "https://newsapi.org/v2/"
 };
 
 export default config;
