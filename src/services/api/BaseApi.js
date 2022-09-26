@@ -8,7 +8,7 @@ class BaseApi {
 
   generateRequestHeaders = () => ({
     method: "GET",
-    headers: { Authorization: process.env.REACT_APP_API_KEY }
+    headers: { Authorization: config.key }
   });
 
   generateQueryFilters = (filterObject) =>
