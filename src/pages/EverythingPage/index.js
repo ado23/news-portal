@@ -5,14 +5,12 @@ import Navbar from "layout/Navbar";
 import Footer from "layout/Footer";
 import MainContainer from "layout/MainContainer";
 
+import NoResults from "components/NoResults";
 import RenderNewsCards from "components/Cards";
 import HeaderTitle from "components/HeaderTitle";
 
 import FilteringTab from "./filtering";
 import LoadMore from "./features/LoadMore";
-
-import NoResults from "components/NoResults";
-
 import { reset, getArticles } from "./actions";
 
 const RenderContent = ({ articles }) => {

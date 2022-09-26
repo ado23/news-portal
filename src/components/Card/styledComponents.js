@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const CardImage = styled(Card.Img)`
   width: 100%;
-  height: 160px;
+  height: 10rem;
 `;
 
 export const CardBody = styled(Card.Body)`
