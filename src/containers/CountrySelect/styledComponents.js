@@ -9,6 +9,10 @@ export const StyledDropdownButton = styled(DropdownButton)`
   }
 
   .dropdown-toggle {
-    padding: 4px;
+    padding: 5px;
+  }
+
+  .dropdown-toggle::after {
+    display: none !important;
   }
 `;
